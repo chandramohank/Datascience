@@ -1,3 +1,6 @@
+#https://www.kaggle.com/ash316/the-stack-survey
+#https://www.kaggle.com/stackoverflow/so-survey-2017/kernels
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "# Function 1: Create function to calculate percent distribution for factors\npct <- function(x){\n  tbl <- table(x)\n  tbl_pct <- cbind(tbl,round(prop.table(tbl)*100,2))\n  colnames(tbl_pct) <- c('Count','Percentage')\n  kable(tbl_pct)\n}",
+    "created" : 1518529555339.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2837747713",
+    "id" : "5E95DFA3",
+    "lastKnownWriteTime" : 1518529623,
+    "last_content_update" : 1518529623824,
+    "path" : "D:/Documents/Datascience/R/CreditRating/userdefinedfunctions.R",
+    "project_path" : "userdefinedfunctions.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

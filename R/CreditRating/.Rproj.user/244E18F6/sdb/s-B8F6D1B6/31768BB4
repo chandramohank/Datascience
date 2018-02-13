@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#https://rstudio-pubs-static.s3.amazonaws.com/225209_df0130c5a0614790b6365676b9372c07.html\n#https://ocw.mit.edu/courses/sloan-school-of-management/15-062-data-mining-spring-2003/assignments/GermanCredit.pdf",
+    "created" : 1518529501329.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3013086315",
+    "id" : "31768BB4",
+    "lastKnownWriteTime" : 1518529315,
+    "last_content_update" : 1518529315,
+    "path" : "D:/Documents/Datascience/R/CreditRating/CreditRating.R",
+    "project_path" : "CreditRating.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

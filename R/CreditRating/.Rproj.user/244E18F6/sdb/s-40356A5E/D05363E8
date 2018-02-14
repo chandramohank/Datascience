@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#https://rstudio-pubs-static.s3.amazonaws.com/225209_df0130c5a0614790b6365676b9372c07.html\n#https://ocw.mit.edu/courses/sloan-school-of-management/15-062-data-mining-spring-2003/assignments/GermanCredit.pdf\n\n#install.packages(\"DT\")\n#install.packages(\"knitr\")\n\nlibrary(DT)\nlibrary(knitr) \n\nsource(\"D:/Documents/Datascience/R/CreditRating/userdefinedfunctions.R\")\n\n#cdata<-read.table(\"ftp://ftp.ics.uci.edu/pub/machine-learning-databases/statlog/german/german.data\", h=F, sep=\"\")\n\ncdata<-read.table(\"D:/Documents/Datascience/Datasets/CreditRating/german.data.txt\", h=F, sep=\"\")\n# Update column Names\ncolnames(cdata) <- c(\"chk_ac_status_1\",\n                     \"duration_month_2\", \"credit_history_3\", \"purpose_4\",\n                     \"credit_amount_5\",\"savings_ac_bond_6\",\"p_employment_since_7\", \n                     \"instalment_pct_8\", \"personal_status_9\",\"other_debtors_or_grantors_10\", \n                     \"present_residence_since_11\",\"property_type_12\",\"age_in_yrs_13\",\n                     \"other_instalment_type_14\", \"housing_type_15\", \n                     \"number_cards_this_bank_16\",\"job_17\",\"no_people_liable_for_mntnance_18\",\n                     \"telephone_19\", \"foreign_worker_20\", \n                     \"good_bad_21\")\n\n# Read a numeric copy: Numeric data for Neural network & Lasso\ncdatanum<-read.table(\"D:/Documents/Datascience/Datasets/CreditRating/german.data-numeric.txt\", h=F, sep=\"\") \ncdatanum <- as.data.frame(sapply(cdatanum, as.numeric ))\nstr(cdata)\n\ncdata$duration_month_2  <- as.numeric(cdata$duration_month_2)\ncdata$credit_amount_5   <-  as.numeric(cdata$credit_amount_5 )\ncdata$instalment_pct_8 <-  as.numeric(cdata$instalment_pct_8)\ncdata$present_residence_since_11 <-  as.numeric(cdata$present_residence_since_11)\ncdata$age_in_yrs_13        <-  as.numeric(cdata$age_in_yrs_13)\ncdata$number_cards_this_bank_16    <-  as.numeric(cdata$number_cards_this_bank_16)\ncdata$no_people_liable_for_mntnance_18 <-  as.numeric(cdata$no_people_liable_for_mntnance_18)\n\nA1 <- gbpct(cdata$chk_ac_status_1)\n  ",
+    "created" : 1518613281745.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2073676768",
+    "id" : "D05363E8",
+    "lastKnownWriteTime" : 1518532161,
+    "last_content_update" : 1518617766844,
+    "path" : "D:/Documents/Datascience/R/CreditRating/CreditRating.R",
+    "project_path" : "CreditRating.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

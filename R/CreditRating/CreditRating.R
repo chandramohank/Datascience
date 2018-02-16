@@ -6,6 +6,7 @@
 #install.packages("ClustOfVar")
 #install.packages("ape")
 #install.packages("caret")
+#install.packages("ROCR")
 library(DT)
 library(knitr) 
 library(Information) 
@@ -13,6 +14,7 @@ library(ClustOfVar)
 library(ape)
 library(caret)
 library(stats)
+library(ROCR)     
 
 #source("E:/DataScience/Practice/Datascience/R/CreditRating/userdefinedfunctions.R")
 source("D:/Documents/Datascience/R/CreditRating/userdefinedfunctions.R")
@@ -115,3 +117,20 @@ m1 <- glm(good_bad_21~.,data=train_1,family=binomial())
 m1 <- step(m1)
 summary(m1)
 
+# List of significant variables and features with p-value <0.01
+significant.variables <- summary(m1)$coeff[-1,4] < 0.01
+names(significant.variables)[significant.variables == TRUE]
+
+prob <- predict(m1, type = "response")
+res <- residuals(m1, type = "deviance")
+
+confint(m1)
+
+
+test_1$m1_score <- predict(m1,type='response',test_1)
+m1_pred <- prediction(test_1$m1_score, test_1$good_bad_21)
+m1_perf <- performance(m1_pred,"tpr","fpr")
+
+plot(m1_perf, lwd=2, colorize=TRUE, main="ROC m1: Logistic Regression Performance")
+lines(x=c(0, 1), y=c(0, 1), col="red", lwd=1, lty=3);
+lines(x=c(1, 0), y=c(0, 1), col="green", lwd=1, lty=4)

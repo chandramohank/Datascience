@@ -1,11 +1,11 @@
 #https://rstudio-pubs-static.s3.amazonaws.com/225209_df0130c5a0614790b6365676b9372c07.html
 #https://ocw.mit.edu/courses/sloan-school-of-management/15-062-data-mining-spring-2003/assignments/GermanCredit.pdf
-
 #install.packages("DT")
 #install.packages("knitr")
 #install.packages("Information")
 #install.packages("ClustOfVar")
 #install.packages("ape")
+#install.packages("caret")
 library(DT)
 library(knitr) 
 library(Information) 
@@ -14,9 +14,12 @@ library(ape)
 library(caret)
 library(stats)
 
-source("D:/Documents/Datascience/R/CreditRating/userdefinedfunctions.R")
+source("E:/DataScience/Practice/Datascience/R/CreditRating/userdefinedfunctions.R")
 
-cdata<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data.txt", h=F, sep="")
+cdata<-read.table("E:/DataScience/Practice/Datasets/german.data.txt", h=F, sep="")
+
+#cdata<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data.txt", h=F, sep="")
+
 # Update column Names
 colnames(cdata) <- c("chk_ac_status_1",
                      "duration_month_2", "credit_history_3", "purpose_4",
@@ -29,7 +32,9 @@ colnames(cdata) <- c("chk_ac_status_1",
                      "good_bad_21")
 
 # Read a numeric copy: Numeric data for Neural network & Lasso
-cdatanum<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data-numeric.txt", h=F, sep="") 
+
+cdatanum<-read.table("E:/DataScience/Practice/Datasets/german.data-numeric.txt", h=F, sep="") 
+#cdatanum<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data-numeric.txt", h=F, sep="") 
 cdatanum <- as.data.frame(sapply(cdatanum, as.numeric ))
 
 #cdata<-read.table("ftp://ftp.ics.uci.edu/pub/machine-learning-databases/statlog/german/german.data", h=F, sep="")

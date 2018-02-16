@@ -14,13 +14,15 @@ library(ape)
 library(caret)
 library(stats)
 
-source("E:/DataScience/Practice/Datascience/R/CreditRating/userdefinedfunctions.R")
+#source("E:/DataScience/Practice/Datascience/R/CreditRating/userdefinedfunctions.R")
+source("D:/Documents/Datascience/R/CreditRating/userdefinedfunctions.R")
 
-cdata<-read.table("E:/DataScience/Practice/Datasets/german.data.txt", h=F, sep="")
+#cdata<-read.table("E:/DataScience/Practice/Datasets/german.data.txt", h=F, sep="")
 
-#cdata<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data.txt", h=F, sep="")
+cdata<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data.txt", h=F, sep="")
 
-# Update column Names
+#Update column Names
+
 colnames(cdata) <- c("chk_ac_status_1",
                      "duration_month_2", "credit_history_3", "purpose_4",
                      "credit_amount_5","savings_ac_bond_6","p_employment_since_7", 
@@ -33,8 +35,8 @@ colnames(cdata) <- c("chk_ac_status_1",
 
 # Read a numeric copy: Numeric data for Neural network & Lasso
 
-cdatanum<-read.table("E:/DataScience/Practice/Datasets/german.data-numeric.txt", h=F, sep="") 
-#cdatanum<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data-numeric.txt", h=F, sep="") 
+#cdatanum<-read.table("E:/DataScience/Practice/Datasets/german.data-numeric.txt", h=F, sep="") 
+cdatanum<-read.table("D:/Documents/Datascience/Datasets/CreditRating/german.data-numeric.txt", h=F, sep="") 
 cdatanum <- as.data.frame(sapply(cdatanum, as.numeric ))
 
 #cdata<-read.table("ftp://ftp.ics.uci.edu/pub/machine-learning-databases/statlog/german/german.data", h=F, sep="")
